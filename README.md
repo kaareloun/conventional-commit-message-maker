@@ -13,8 +13,6 @@ A cli tool for keeping your commit messages consistent. Based on [conventional c
 ```bash
 git clone git@github.com:kaareloun/cl.git
 cd cl
-npm install
-npm run build
 npm link
 ```
 
