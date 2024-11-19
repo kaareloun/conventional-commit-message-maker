@@ -7,7 +7,6 @@
     "cl": "bin/index.js"
   },
   "scripts": {
-    "commit": "tsx ./index.ts",
     "build": "tsc --outDir bin"
   },
   "author": "",
