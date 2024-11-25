@@ -73,7 +73,6 @@ async function main() {
 
   const fullMessage = `${commitType.toString()}: ${message.toString()}${isWIP ? ' (WIP)' : ''}${taskNumber ? ` (${taskNumber.toString()})` : ''}`
 
-  // TODO: Loader if not verbose & handle cancel with group thing & spinner (if loading for more than 1sec?) & show stdout/stderr only after error/success?
   await execa({
     stdout: verbose ? process.stdout : undefined,
     stderr: verbose ? process.stdout : undefined,
