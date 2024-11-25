@@ -74,8 +74,8 @@ async function main() {
   const fullMessage = `${commitType.toString()}: ${message.toString()}${isWIP ? ' (WIP)' : ''}${taskNumber ? ` (${taskNumber.toString()})` : ''}`
 
   await execa({
-    stdout: verbose ? process.stdout : undefined,
-    stderr: verbose ? process.stdout : undefined,
+    stdout: process.stdout,
+    stderr: process.stdout,
   })`git commit -m ${fullMessage}`
   outro(`Committed "${fullMessage}"`)
 

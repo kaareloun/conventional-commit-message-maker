@@ -53,8 +53,8 @@ async function main() {
     const isWIP = await handleStep(confirm({ message: 'Is this task a WIP?', initialValue: false }));
     const fullMessage = `${commitType.toString()}: ${message.toString()}${isWIP ? ' (WIP)' : ''}${taskNumber ? ` (${taskNumber.toString()})` : ''}`;
     await execa({
-        stdout: verbose ? process.stdout : undefined,
-        stderr: verbose ? process.stdout : undefined,
+        stdout: process.stdout,
+        stderr: process.stdout,
     }) `git commit -m ${fullMessage}`;
     outro(`Committed "${fullMessage}"`);
     const { stdout: gitStatus } = await execa `git status`;
