@@ -1,6 +1,6 @@
-# CL
+# Commit Helper
 
-A cli tool for keeping your commit messages consistent. Based on [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+Commit helper is a cli tool for keeping your commit messages consistent. Based on [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
 ![demo](./demo.gif)
 
@@ -11,15 +11,14 @@ A cli tool for keeping your commit messages consistent. Based on [conventional c
 ## Installation
 
 ```bash
-git clone git@github.com:kaareloun/cl.git
-cd cl
-npm link
+npm i -g commit-helper
+echo 'alias ch="commit-helper"' >> ~/.bashrc
 ```
 
 ## Usage
 
 ```bash
-cl [--verbose]
+ch [--verbose]
 ```
 
 ## Options
@@ -29,3 +28,7 @@ cl [--verbose]
 ## Customizing
 
 You can easily customize this to your liking by editing index.ts and running `npm run build`.
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md).

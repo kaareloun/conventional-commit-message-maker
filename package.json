@@ -1,20 +1,22 @@
 {
-  "name": "cl",
+  "name": "commit-helper",
   "version": "1.0.0",
-  "description": "A cli tool for keeping your commit messages consistent.",
+  "description": "Commit helper is a cli tool for keeping your commit messages consistent. Based on Conventional Commits",
   "type": "module",
   "bin": {
-    "cl": "bin/index.js"
+    "commit-helper": "bin/index.js"
   },
   "scripts": {
     "build": "tsc",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "release": "standard-version"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^22.7.5",
     "prettier": "^3.3.3",
+    "standard-version": "^9.5.0",
     "typescript": "^5.6.3"
   },
   "dependencies": {
