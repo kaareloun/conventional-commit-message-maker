@@ -19,8 +19,12 @@ npm link
 ## Usage
 
 ```bash
-cl
+cl [--verbose]
 ```
+
+## Options
+
+- `--verbose`: Prints the git commit output to the console.
 
 ## Customizing
 

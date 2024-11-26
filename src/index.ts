@@ -5,6 +5,9 @@ import chalk from 'chalk'
 import { execa } from 'execa'
 
 async function main() {
+  const [, , ...args] = process.argv
+  const verbose = args.includes('--verbose')
+
   const { stdout } = await execa`git diff --cached --numstat`.pipe`wc -l`
   const files = Number(stdout)
   if (files <= 0) {
@@ -71,8 +74,8 @@ async function main() {
   const fullMessage = `${commitType.toString()}: ${message.toString()}${isWIP ? ' (WIP)' : ''}${taskNumber ? ` (${taskNumber.toString()})` : ''}`
 
   await execa({
-    stdout: process.stdout,
-    stderr: process.stdout,
+    stdout: verbose ? process.stdout : 'ignore',
+    stderr: verbose ? process.stdout : 'ignore',
   })`git commit -m ${fullMessage}`
   outro(`Committed "${fullMessage}"`)
 
