@@ -19,7 +19,7 @@ npm link
 ## Usage
 
 ```bash
-cl [--verbose]
+cl
 ```
 
 ## Customizing

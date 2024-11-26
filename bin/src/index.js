@@ -3,6 +3,9 @@ import { intro, confirm, select, text, outro, isCancel } from '@clack/prompts';
 import chalk from 'chalk';
 import { execa } from 'execa';
 async function main() {
+    console.log('building 3');
+    const [, , ...args] = process.argv;
+    const verbose = args.includes('--verbose');
     const { stdout } = await execa `git diff --cached --numstat`.pipe `wc -l`;
     const files = Number(stdout);
     if (files <= 0) {

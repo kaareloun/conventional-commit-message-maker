@@ -7,8 +7,8 @@
     "cl": "bin/index.js"
   },
   "scripts": {
-    "build": "tsc --outDir bin",
-    "dev": "tsx watch src/index.ts --outDir bin"
+    "build": "tsc",
+    "dev": "tsc --watch"
   },
   "author": "",
   "license": "ISC",
@@ -21,7 +21,6 @@
     "@clack/core": "^0.3.4",
     "@clack/prompts": "^0.7.0",
     "chalk": "^5.3.0",
-    "execa": "^9.4.0",
-    "tsx": "^4.19.1"
+    "execa": "^9.4.0"
   }
 }
