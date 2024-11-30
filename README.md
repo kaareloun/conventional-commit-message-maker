@@ -37,6 +37,7 @@ ch [--verbose] [--no-breaking] [--no-task] [--no-wip]
 npm remove -g commit-helper
 git clone https://github.com/kaarel/commit-helper.git
 cd commit-helper
+npm i
 npm link
 npm run dev
 ```

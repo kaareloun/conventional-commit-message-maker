@@ -109,10 +109,9 @@ async function main() {
   console.log(gitStatus)
 }
 
-try {
-  await main()
-} catch (e) {
+main().catch((e) => {
+  console.error(e)
   outro(
     `${chalk.red('CATASTROPHIC FAILURE')}: Something went wrong committing your spaghetti`,
   )
-}
+})
