@@ -3,10 +3,19 @@
 import { intro, confirm, select, text, outro, isCancel } from '@clack/prompts'
 import chalk from 'chalk'
 import { execa } from 'execa'
+import fs from 'fs/promises'
 
 async function main() {
   const [, , ...args] = process.argv
-  const verbose = args.includes('--verbose')
+  const usesHusky = await fs
+    .stat('.husky')
+    .then(() => true)
+    .catch(() => false)
+  const verbose = args.includes('--verbose') || usesHusky
+
+  const noBreaking = args.includes('--no-breaking')
+  const noTask = args.includes('--no-task')
+  const noWip = args.includes('--no-wip')
 
   const { stdout } = await execa`git diff --cached --numstat`.pipe`wc -l`
   const files = Number(stdout)
@@ -29,7 +38,7 @@ async function main() {
 
   intro(`Committing ${files} staged file${files > 1 ? 's' : ''}`)
 
-  const commitType = await handleStep(
+  let commitType = await handleStep(
     select({
       message: 'Select the type of change you are commiting',
       options: [
@@ -52,6 +61,18 @@ async function main() {
     }),
   )
 
+  const breakingChange = noBreaking
+    ? false
+    : await handleStep(
+        text({
+          message: `Does this change introduce a breaking change? (press ${chalk.cyan('[enter]')} to skip)`,
+        }),
+      )
+
+  if (breakingChange) {
+    commitType = `${commitType}!`
+  }
+
   const message = await handleStep(
     text({
       message:
@@ -62,14 +83,19 @@ async function main() {
     }),
   ).then((msg) => `${msg}`.toLowerCase().trim())
 
-  const taskNumber = await handleStep(
-    text({
-      message: `Provide task number, (press ${chalk.cyan('[enter]')} to skip)`,
-    }),
-  )
-  const isWIP = await handleStep(
-    confirm({ message: 'Is this task a WIP?', initialValue: false }),
-  )
+  const taskNumber = noTask
+    ? undefined
+    : await handleStep(
+        text({
+          message: `Provide task number, (press ${chalk.cyan('[enter]')} to skip)`,
+        }),
+      )
+
+  const isWIP = noWip
+    ? false
+    : await handleStep(
+        confirm({ message: 'Is this task a WIP?', initialValue: false }),
+      )
 
   const fullMessage = `${commitType.toString()}: ${message.toString()}${isWIP ? ' (WIP)' : ''}${taskNumber ? ` (${taskNumber.toString()})` : ''}`
 
