@@ -34,6 +34,7 @@ ch [--verbose] [--no-breaking] [--no-task] [--no-wip]
 ## Customizing
 
 ```bash
+npm remove -g commit-helper
 git clone https://github.com/kaarel/commit-helper.git
 cd commit-helper
 npm link
