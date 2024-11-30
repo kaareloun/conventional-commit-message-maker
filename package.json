@@ -2,14 +2,15 @@
   "name": "commit-helper",
   "version": "1.0.0",
   "description": "Commit helper is a cli tool for keeping your commit messages consistent. Based on Conventional Commits",
+  "type": "module",
   "bin": {
-    "commit-helper": "bin/index.js"
+    "commit-helper": "bin/index.cjs"
   },
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --outfile=bin/index.js --platform=node --minify --banner:js='#!/usr/bin/env node'",
+    "build": "esbuild src/index.ts --bundle --outfile=bin/index.cjs --platform=node --format=cjs --minify --banner:js='#!/usr/bin/env node'",
     "dev": "npm run build -- --watch"
   },
-  "author": "",
+  "author": "https://github.com/kaareloun",
   "license": "ISC",
   "dependencies": {
     "@clack/core": "^0.3.4",
