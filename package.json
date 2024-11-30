@@ -6,7 +6,7 @@
     "commit-helper": "bin/index.js"
   },
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --outfile=bin/index.js --platform=node --format=cjs --minify",
+    "build": "esbuild src/index.ts --bundle --outfile=bin/index.js --platform=node --minify --banner:js='#!/usr/bin/env node'",
     "dev": "npm run build -- --watch"
   },
   "author": "",

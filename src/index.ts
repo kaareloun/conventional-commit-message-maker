@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import { intro, confirm, select, text, outro, isCancel } from '@clack/prompts'
 import chalk from 'chalk'
 import { execa } from 'execa'
