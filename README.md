@@ -2,7 +2,7 @@
 
 A cli tool for keeping your commit messages consistent. Based on [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
-![demo](./demo.gif)
+![demo](https://github.com/kaareloun/conventional-commit-message-maker/blob/main/demo.gif?raw=true)
 
 ## Prerequisites
 

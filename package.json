@@ -2,6 +2,18 @@
   "name": "conventional-commit-message-maker",
   "version": "1.1.0",
   "description": "Conventional Commit Message Maker is a cli tool for keeping your commit messages consistent. Based on Conventional Commits specification",
+  "homepage": "https://github.com/kaareloun/conventional-commit-message-maker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaareloun/conventional-commit-message-maker.git"
+  },
+  "keywords": [
+    "commit",
+    "pretty",
+    "format",
+    "conventional changelog",
+    "commitizen"
+  ],
   "type": "module",
   "bin": {
     "conventional-commit-message-maker": "bin/index.cjs"
@@ -10,7 +22,7 @@
     "build": "esbuild src/index.ts --bundle --outfile=bin/index.cjs --platform=node --format=cjs --minify",
     "dev": "npm run build -- --watch"
   },
-  "author": "https://github.com/kaareloun",
+  "author": "Kaarel Õun <kaareloun@gmail.com> (https://github.com/kaareloun)",
   "license": "ISC",
   "dependencies": {
     "@clack/core": "^0.3.4",
