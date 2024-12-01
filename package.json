@@ -7,7 +7,7 @@
     "commit-helper": "bin/index.cjs"
   },
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --outfile=bin/index.cjs --platform=node --format=cjs --minify --banner:js='#!/usr/bin/env node'",
+    "build": "esbuild src/index.ts --bundle --outfile=bin/index.cjs --platform=node --format=cjs --minify",
     "dev": "npm run build -- --watch"
   },
   "author": "https://github.com/kaareloun",
