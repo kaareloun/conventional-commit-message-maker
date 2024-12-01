@@ -1,6 +1,6 @@
 {
   "name": "conventional-commit-message-maker",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Conventional Commit Message Maker is a cli tool for keeping your commit messages consistent. Based on Conventional Commits specification",
   "type": "module",
   "bin": {
