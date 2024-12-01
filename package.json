@@ -1,10 +1,10 @@
 {
-  "name": "commit-helper",
+  "name": "conventional-commit-message-maker",
   "version": "1.0.0",
-  "description": "Commit helper is a cli tool for keeping your commit messages consistent. Based on Conventional Commits",
+  "description": "Conventional Commit Message Maker is a cli tool for keeping your commit messages consistent. Based on Conventional Commits specification",
   "type": "module",
   "bin": {
-    "commit-helper": "bin/index.cjs"
+    "conventional-commit-message-maker": "bin/index.cjs"
   },
   "scripts": {
     "build": "esbuild src/index.ts --bundle --outfile=bin/index.cjs --platform=node --format=cjs --minify",

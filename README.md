@@ -1,4 +1,4 @@
-# Commit Helper
+# Conventional Commit Message Maker
 
 A cli tool for keeping your commit messages consistent. Based on [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
@@ -11,11 +11,11 @@ A cli tool for keeping your commit messages consistent. Based on [conventional c
 ## Installation
 
 ```bash
-npm i -g commit-helper
-echo 'alias ch="commit-helper"' >> ~/.bashrc
+npm i -g conventional-commit-message-maker
+echo 'alias ch="conventional-commit-message-maker"' >> ~/.bashrc
 
 # Optionally, you can skip some of the prompts
-echo 'alias ch="commit-helper --no-breaking --no-task --no-wip"' >> ~/.bashrc
+echo 'alias ch="conventional-commit-message-maker --no-breaking --no-task --no-wip"' >> ~/.bashrc
 ```
 
 ## Usage
@@ -34,9 +34,9 @@ ch
 ## Customizing
 
 ```bash
-npm remove -g commit-helper
-git clone https://github.com/kaarel/commit-helper.git
-cd commit-helper
+npm remove -g conventional-commit-message-maker
+git clone https://github.com/kaarel/conventional-commit-message-maker.git
+cd conventional-commit-message-maker
 npm i
 npm link
 npm run dev
