@@ -21,7 +21,7 @@ echo 'alias ch="commit-helper --no-breaking --no-task --no-wip"' >> ~/.bashrc
 ## Usage
 
 ```bash
-ch [--verbose] [--no-breaking] [--no-task] [--no-wip]
+ch
 ```
 
 ## Options
