@@ -21,6 +21,15 @@ const noTask = args.includes('--no-task')
 const noWip = args.includes('--no-wip')
 
 async function main() {
+  const isGitRepo = await execa`git rev-parse --is-inside-work-tree`.then(
+    () => true,
+    () => false,
+  )
+  if (!isGitRepo) {
+    outro('Not a git repository.')
+    process.exit()
+  }
+
   const { stdout } = await execa`git diff --cached --numstat`.pipe`wc -l`
   const files = Number(stdout)
   if (files <= 0) {
