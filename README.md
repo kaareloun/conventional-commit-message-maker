@@ -6,17 +6,40 @@ A cli tool for keeping your commit messages consistent. Based on [conventional c
 
 ## Prerequisites
 
-- Node
+- Node >= 20
+- Git
 
 ## Installation
+
+### MacOS
+
+#### 1. Install
+
+```bash
+npm i -g conventional-commit-message-maker
+echo 'alias ch="conventional-commit-message-maker"' >> ~/.zshrc
+source ~/.zshrc
+
+# You can skip some of the prompts and make multiple aliases for different projects
+echo 'alias chs="conventional-commit-message-maker --no-scope --no-breaking --no-task --no-wip"' >> ~/.zshrc
+```
+
+#### 2. Open new terminal window
+
+### Linux
+
+#### 1. Install
 
 ```bash
 npm i -g conventional-commit-message-maker
 echo 'alias ch="conventional-commit-message-maker"' >> ~/.bashrc
+source ~/.bashrc
 
 # You can skip some of the prompts and make multiple aliases for different projects
 echo 'alias chs="conventional-commit-message-maker --no-scope --no-breaking --no-task --no-wip"' >> ~/.bashrc
 ```
+
+#### 2. Open new terminal window
 
 ## Usage
 
