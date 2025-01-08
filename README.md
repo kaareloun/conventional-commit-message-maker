@@ -13,8 +13,6 @@ A cli tool for keeping your commit messages consistent. Based on [conventional c
 
 ### MacOS
 
-#### 1. Install
-
 ```bash
 npm i -g conventional-commit-message-maker
 echo 'alias ch="conventional-commit-message-maker"' >> ~/.zshrc
@@ -25,8 +23,6 @@ echo 'alias chs="conventional-commit-message-maker --no-scope --no-breaking --no
 ```
 
 ### Linux
-
-#### 1. Install
 
 ```bash
 npm i -g conventional-commit-message-maker
